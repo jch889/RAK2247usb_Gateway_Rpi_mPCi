@@ -38,6 +38,13 @@ echo_yellow "---------------------------------------------------"
 echo_yellow "----------------RAK2247(USB)-----------------------"
 echo_yellow "---------------------------------------------------"
 GW_MODEL=RAK2247
+function do_set_spi_to_json()
+{
+    JSON_FILE=./rak/rak/rak_gw_model.json
+    
+    linenum=`sed -n "/spi/=" $JSON_FILE`
+    sed -i "${linenum}c\\\\t\"spi\": \"$1\"" $JSON_FILE
+}
 do_set_spi_to_json 0
 
 linenum=`sed -n "/gw_model/=" $JSON_FILE`
@@ -46,13 +53,6 @@ sed -i "${linenum}c\\\\t\"gw_model\": \"$GW_MODEL\"," $JSON_FILE
 linenum=`sed -n "/install_lte/=" $RAK_GW_JSON`
 sed -i "${linenum}c\\\\t\"install_lte\": \"$INSTALL_LTE\"," $RAK_GW_JSON
 
-function do_set_spi_to_json()
-{
-    JSON_FILE=./rak/rak/rak_gw_model.json
-    
-    linenum=`sed -n "/spi/=" $JSON_FILE`
-    sed -i "${linenum}c\\\\t\"spi\": \"$1\"" $JSON_FILE
-}
 
 
 apt update
