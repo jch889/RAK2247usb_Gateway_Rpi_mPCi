@@ -24,6 +24,7 @@ step3 : Clone the installer and start the installation.
       $ sudo apt update; sudo apt install git -y
       $ git clone https://github.com/jch889/RAK2247usb_Gateway_Rpi_mPCi.git ~/RAK2247usb_Gateway_Rpi_mPCi
       $ cd ~/RAK2247usb_Gateway_Rpi_mPCi
+      $ chmod 755 install.sh
       $ sudo ./install.sh
 
 step4 : Wait a moment and the installation is complete.If your gateway uses a wired connection, please configure the region frequency using "sudo gateway-config" after the installation is complete.
