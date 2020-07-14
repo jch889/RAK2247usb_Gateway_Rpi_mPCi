@@ -30,8 +30,13 @@ CREATE_IMG=""
 JSON_FILE=./rak/rak/rak_gw_model.json
 RAK_GW_JSON=./rak/rak/gateway-config-info.json
 INSTALL_LTE=0
-
-echo_yellow "RAK2247(USB)"
+function echo_yellow()
+{
+    echo -e "\033[1;33m$1\033[0m"
+}
+echo_yellow "---------------------------------------------------"
+echo_yellow "----------------RAK2247(USB)-----------------------"
+echo_yellow "---------------------------------------------------"
 GW_MODEL=RAK2247
 do_set_spi_to_json 0
 
