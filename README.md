@@ -17,7 +17,15 @@ This project currently provides support for the below platforms.
 
 ##	Installation procedure
 
-step1 : Use "sudo raspi-config" command, enable i2c interface, disable login shell over serial and enable serial port hardware.
+step1 : Initialize NPEX500 with display and keyboard. 
+* User: user
+* Passwordr: user
+* User: root
+* Passwordr: techbase
+
+step2 : Use "sudo raspi-config" command, enable i2c and SSH interface, disable login shell over serial and enable serial port hardware.
+
+From here you can remotely configure using SSH
 
 step3 : Clone the installer and start the installation.
 
@@ -29,4 +37,4 @@ step3 : Clone the installer and start the installation.
 
 step4 : Wait a moment and the installation is complete.If your gateway uses a wired connection, please configure the region frequency using "sudo gateway-config" after the installation is complete.
 
-step6 : For more other features, please use "sudo gateway-config".
+step5 : For more other features, please use "sudo gateway-config".
